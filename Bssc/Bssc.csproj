@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE88C5F4-5CDC-4A01-BF29-D16615529845}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bssc</RootNamespace>
+    <AssemblyName>Bssc</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcCoreMgd">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\ObjectARX\inc\AcCoreMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcCui">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\ObjectARX\inc\AcCui.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcDbMgd">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\ObjectARX\inc\AcDbMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acdbmgdbrep">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\ObjectARX\inc\acdbmgdbrep.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcMgd">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\ObjectARX\inc\AcMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BaseLibrary">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2014\BaseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CSkin">
+      <HintPath>..\..\..\DBClient\DBClient\bin\Debug\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicDataGridViewTool">
+      <HintPath>..\DynamicDataGridViewTool\bin\Debug\DynamicDataGridViewTool.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\CadControl\ArrangePierAndFoundation.cs" />
+    <Compile Include="Control\CadControl\DrawingInfoGetOrSet.cs" />
+    <Compile Include="Control\CadControl\ArrangeDivideSpanLine.cs" />
+    <Compile Include="Control\CadControl\ArrangeDivideSpanLineOperation.cs" />
+    <Compile Include="Control\CadControl\BaseGlyph.cs" />
+    <Compile Include="Control\CadControl\DrawTool.cs" />
+    <Compile Include="Control\CadControl\PreViewOperation.cs" />
+    <Compile Include="Control\CadControl\SnapEntityJigForArrangePier.cs" />
+    <Compile Include="Control\CadControl\SnapEntityJigForDivideSpanLine.cs" />
+    <Compile Include="Control\DataControl\AcquireResultData.cs" />
+    <Compile Include="Control\DataControl\DataExamine.cs" />
+    <Compile Include="Control\DataControl\ResFoundationControl.cs" />
+    <Compile Include="Control\DataControl\SaveAndLoadData\SaveAndLoadDataByXML.cs" />
+    <Compile Include="Control\DataControl\SaveAndLoadData\SaveData.cs" />
+    <Compile Include="Control\DataControl\SaveAndLoadData\TempData.cs" />
+    <Compile Include="Control\DataControl\SuperModelControl.cs" />
+    <Compile Include="Control\DataControl\SupportModelControl.cs" />
+    <Compile Include="Control\SmediRoad\EI\BasePoint.cs" />
+    <Compile Include="Control\SmediRoad\EI\EICDCurveFactory.cs" />
+    <Compile Include="Control\SmediRoad\EI\EICDPoint.cs" />
+    <Compile Include="Control\SmediRoad\EI\EICurveFactory.cs" />
+    <Compile Include="Control\SmediRoad\EI\EICurveType.cs" />
+    <Compile Include="Control\SmediRoad\EI\EIFactoryProducer.cs" />
+    <Compile Include="Control\SmediRoad\EI\EIParseException.cs" />
+    <Compile Include="Control\Tools\ContextMenuWrapForDatagridview.cs" />
+    <Compile Include="Control\Tools\DgvTool.cs" />
+    <Compile Include="Control\Tools\DynamicDgv.cs" />
+    <Compile Include="Control\Tools\GeneralTool.cs" />
+    <Compile Include="Control\Tools\RoadDataHandle.cs" />
+    <Compile Include="Control\Tools\TreeNodeTool.cs" />
+    <Compile Include="Control\Tools\TreeviewContextMenu\ContextMenuWrapForBridgeNode.cs" />
+    <Compile Include="Control\Tools\TreeviewContextMenu\ContextMenuWrapForBridgeSturctureNode.cs" />
+    <Compile Include="Control\Tools\TreeviewContextMenu\ContextMenuWrapForProjectNode.cs" />
+    <Compile Include="Control\Tools\TreeviewContextMenu\ContextMenuWrapForResourceNode.cs" />
+    <Compile Include="Control\Tools\TreeviewContextMenu\ContextMenuWrapForRoadNode.cs" />
+    <Compile Include="Control\Tools\TreeviewContextMenu\ContextMenuWrapForSingleSourceNode.cs" />
+    <Compile Include="Control\Tools\UUIDUtil.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BakModels\InsCgx.cs" />
+    <Compile Include="Models\BakModels\InsDivideSpanLine.cs" />
+    <Compile Include="Models\BakModels\InsExploration.cs" />
+    <Compile Include="Models\BakModels\InsPile.cs" />
+    <Compile Include="Models\BakModels\InsProject.cs" />
+    <Compile Include="Models\BakModels\InsRoad.cs" />
+    <Compile Include="Models\BakModels\InsRoadPlane.cs" />
+    <Compile Include="Models\BakModels\InsSoilLayer.cs" />
+    <Compile Include="Models\BakModels\InsSubstructure.cs" />
+    <Compile Include="Models\BakModels\InsSuperstructure.cs" />
+    <Compile Include="Models\BakModels\InsSupport.cs" />
+    <Compile Include="Models\BakModels\InsUnitProject.cs" />
+    <Compile Include="Models\ModelsV\GlobalData.cs" />
+    <Compile Include="Models\ModelsV\ProjectModelsV\BridgeModelV.cs" />
+    <Compile Include="Models\ModelsV\ProjectModelsV\ProjectModelV.cs" />
+    <Compile Include="Models\ModelsV\ProjectModelsV\RoadModelV.cs" />
+    <Compile Include="Models\ModelsV\ProjectModelsV\SpanLineModelV.cs" />
+    <Compile Include="Models\ModelsV\ProjectModelsV\SubSModelV.cs" />
+    <Compile Include="Models\ModelsV\ProjectModelsV\SuperSModelV.cs" />
+    <Compile Include="Models\ModelsV\ProjectModelsV\SupportSModelV.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\OVMBallSupportDatas.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\PierParmView.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\PilePositionView.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\ResultModel.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\SdsSteelNumView.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\SubSResultView.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\SuperSResultView.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\SupportNumView.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\SupportResultDataView.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\SupportResultView.cs" />
+    <Compile Include="Models\ModelsV\ResultModelsV\XdsSteelNumView.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\BeamSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\CgxSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\DmxSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\ExplorationSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\ExplorSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\PierSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\FoundationSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\PqxSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\RoadSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\RockCharacterSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\SoiLayerSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\SoilCharacterSourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\SourceModelV.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\SqxSourceModelV.cs" />
+    <Compile Include="Models\BakModels\RelRoadRef.cs" />
+    <Compile Include="Models\BakModels\RelStandardInstanceReference.cs" />
+    <Compile Include="Models\BakModels\RelStandardResourceReference.cs" />
+    <Compile Include="Models\BakModels\RelUnitRoadLine.cs" />
+    <Compile Include="Models\BakModels\ResBeam.cs" />
+    <Compile Include="Models\BakModels\ResDmx.cs" />
+    <Compile Include="Models\BakModels\ResFoundation.cs" />
+    <Compile Include="Models\BakModels\ResPier.cs" />
+    <Compile Include="Models\BakModels\ResPile.cs" />
+    <Compile Include="Models\BakModels\ResPqx.cs" />
+    <Compile Include="Models\BakModels\ResRoad.cs" />
+    <Compile Include="Models\BakModels\ResRockCharacter.cs" />
+    <Compile Include="Models\BakModels\ResSoilCharacter.cs" />
+    <Compile Include="Models\BakModels\ResSqx.cs" />
+    <Compile Include="Models\BakModels\ResSupport.cs" />
+    <Compile Include="Models\ModelsV\SourceModelsV\SupportSourceModelV.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewForms\AffiliateForms\AlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\AlertForm.Designer.cs">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\ArrangePierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\ArrangePierForm.Designer.cs">
+      <DependentUpon>ArrangePierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\DivideSpanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\DivideSpanForm.Designer.cs">
+      <DependentUpon>DivideSpanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\PlotPqxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\PlotPqxForm.Designer.cs">
+      <DependentUpon>PlotPqxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\PreviewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\PreviewControl.Designer.cs">
+      <DependentUpon>PreviewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\ResultDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\ResultDataForm.Designer.cs">
+      <DependentUpon>ResultDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\SelectSoilLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\SelectSoilLayer.Designer.cs">
+      <DependentUpon>SelectSoilLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\showdatagridview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AffiliateForms\showdatagridview.Designer.cs">
+      <DependentUpon>showdatagridview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\MainTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewForms\MainTreeView.Designer.cs">
+      <DependentUpon>MainTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\BridgeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\BridgeForm.Designer.cs">
+      <DependentUpon>BridgeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\ProjectForm.Designer.cs">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\RoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\RoadForm.Designer.cs">
+      <DependentUpon>RoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\SubsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\SubsForm.Designer.cs">
+      <DependentUpon>SubsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\SupersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\SupersForm.Designer.cs">
+      <DependentUpon>SupersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\SupportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ProjectMenuForm\SupportsForm.Designer.cs">
+      <DependentUpon>SupportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\BeamConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\BeamConfigForm.Designer.cs">
+      <DependentUpon>BeamConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\FoundationConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\FoundationConfigForm.Designer.cs">
+      <DependentUpon>FoundationConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\LoadGeoDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\LoadGeoDataForm.Designer.cs">
+      <DependentUpon>LoadGeoDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\PierConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\PierConfigForm.Designer.cs">
+      <DependentUpon>PierConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\RoadConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ResourceMenu\RoadConfigForm.Designer.cs">
+      <DependentUpon>RoadConfigForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ViewForms\AffiliateForms\AlertForm.resx">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\AffiliateForms\ArrangePierForm.resx">
+      <DependentUpon>ArrangePierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\AffiliateForms\DivideSpanForm.resx">
+      <DependentUpon>DivideSpanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\AffiliateForms\PlotPqxForm.resx">
+      <DependentUpon>PlotPqxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\AffiliateForms\ResultDataForm.resx">
+      <DependentUpon>ResultDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\AffiliateForms\SelectSoilLayer.resx">
+      <DependentUpon>SelectSoilLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\AffiliateForms\showdatagridview.resx">
+      <DependentUpon>showdatagridview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\MainTreeView.resx">
+      <DependentUpon>MainTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ProjectMenuForm\BridgeForm.resx">
+      <DependentUpon>BridgeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ProjectMenuForm\ProjectForm.resx">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ProjectMenuForm\RoadForm.resx">
+      <DependentUpon>RoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ProjectMenuForm\SubsForm.resx">
+      <DependentUpon>SubsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ProjectMenuForm\SupersForm.resx">
+      <DependentUpon>SupersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ProjectMenuForm\SupportsForm.resx">
+      <DependentUpon>SupportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ResourceMenu\BeamConfigForm.resx">
+      <DependentUpon>BeamConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ResourceMenu\FoundationConfigForm.resx">
+      <DependentUpon>FoundationConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ResourceMenu\LoadGeoDataForm.resx">
+      <DependentUpon>LoadGeoDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ResourceMenu\PierConfigForm.resx">
+      <DependentUpon>PierConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ResourceMenu\RoadConfigForm.resx">
+      <DependentUpon>RoadConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewForms\MainMenuForm\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
